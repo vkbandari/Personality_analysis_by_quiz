@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+   <body>
+      <table border = 5>
+         {% for key, value in result.items() %}
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+         {% endfor %}
+         
+         
+         
+      </table>
+      <img src="../datasets/result_plot.png"  style="width:500px;height:600px;">
+   </body>
+</html>

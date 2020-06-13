@@ -1,0 +1,41 @@
+﻿s.no,question,option_1,option_2,option_3,option_4,option_5,type,mode,zero
+1, Do you feel comforatble around people,0.2,0.4,0.6,0.8,1,Extraversion,positive,0
+2,Do you know how to captivate others,0.2,0.4,0.6,0.8,1,Extraversion,positive,0
+3,Do you mind being center of attention,0.2,0.4,0.6,0.8,1,Extraversion,positive,0
+4,Are you the life of the party?(Party animal),0.2,0.4,0.6,0.8,1,Extraversion,positive,0
+5,Do you keep yourself in background.,1,0.8,0.6,0.4,0.2,Extraversion,negative,0
+6,Do you wait for others to lead the way,1,0.8,0.6,0.4,0.2,Extraversion,negative,0
+7,Are you quite around strangers,1,0.8,0.6,0.4,0.2,Extraversion,negative,0
+8,Do you bottle up your feelings ,1,0.8,0.6,0.4,0.2,Extraversion,negative,0
+9,Do you think you sympathise with others easily?,0.2,0.4,0.6,0.8,1,Agreeableness,positive,0
+10,Do you take out some of your time for others,0.2,0.4,0.6,0.8,1,Agreeableness,positive,0
+11,You feel others emotions?,0.2,0.4,0.6,0.8,1,Agreeableness,positive,0
+12,Can you make others feel at ease,0.2,0.4,0.6,0.8,1,Agreeableness,positive,0
+13,Are you not really interested in other people's life?,1,0.8,0.6,0.4,0.2,Agreeableness,negative,0
+14,Do you insult others?,1,0.8,0.6,0.4,0.2,Agreeableness,negative,0
+15,Are you hard to get to know,1,0.8,0.6,0.4,0.2,Agreeableness,negative,0
+16,Do you feel little concern for others.,1,0.8,0.6,0.4,0.2,Agreeableness,negative,0
+17,Do you follow a regular schedule,0.2,0.4,0.6,0.8,1,Conscientiousness,positive,0
+18,Are you always prepared ?,0.2,0.4,0.6,0.8,1,Conscientiousness,positive,0
+19,Are you exacting in your work?,0.2,0.4,0.6,0.8,1,Conscientiousness,positive,0
+20,Do you pay attention to details,0.2,0.4,0.6,0.8,1,Conscientiousness,positive,0
+21,Do you wate your time,1,0.8,0.6,0.4,0.2,Conscientiousness,negative,0
+22,Often forget to put things back in their proper place.,1,0.8,0.6,0.4,0.2,Conscientiousness,negative,0
+23,Do you neglect your duties?,1,0.8,0.6,0.4,0.2,Conscientiousness,negative,0
+24,Do things in half-way manner,1,0.8,0.6,0.4,0.2,Conscientiousness,negative,0
+25,Do you enjoy wild flights of fantasy?,0.2,0.4,0.6,0.8,1,openness,positive,0
+26,Enjoy thinking about things,0.2,0.4,0.6,0.8,1,openness,positive,0
+27,Believe in the importance of art,0.2,0.4,0.6,0.8,1,openness,positive,0
+28,Tend to vote for liberal political candidates,0.2,0.4,0.6,0.8,1,openness,positive,0
+29,Avoid philosophical discussions,1,0.8,0.6,0.4,0.2,openness,negative,0
+30, Do not like poetry.,1,0.8,0.6,0.4,0.2,openness,negative,0
+31,Rarely look for a deeper meaning in things.,1,0.8,0.6,0.4,0.2,openness,negative,0
+32,Have difficulty understanding abstract ideas,1,0.8,0.6,0.4,0.2,openness,negative,0
+33,Seldom get mad?,0.2,0.4,0.6,0.8,1,Neuroticism,positive,0
+34,Are you filled with doubt about things?,0.2,0.4,0.6,0.8,1,Neuroticism,positive,0
+35,Have frequent mood swings,0.2,0.4,0.6,0.8,1,Neuroticism,positive,0
+36,Get stressed out easily,0.2,0.4,0.6,0.8,1,Neuroticism,positive,0
+37,Do you feel comfortable with yourself only?,1,0.8,0.6,0.4,0.2,Neuroticism,negative,0
+38,Do you rarely lose your composure?,1,0.8,0.6,0.4,0.2,Neuroticism,negative,0
+39,Are you relaxed most of the time?,1,0.8,0.6,0.4,0.2,Neuroticism,negative,0
+40,Do you remain calm under pressure?,1,0.8,0.6,0.4,0.2,Neuroticism,negative,0

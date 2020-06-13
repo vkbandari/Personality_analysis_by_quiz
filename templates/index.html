@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Questions Page</title>
+
+    </head>
+    <body>
+      <form action = "http://localhost:5000/result" method = "POST">
+
+        {% for i in range(data_length) %}
+        
+            <p>{{ ques_list[i] }}</p>
+            <br/>
+            
+            <label>
+              <input  name='{{i}}' type='radio' value="{{opt1_list[i]}}" required>
+                <span class='btn first'>Strongly Disagree</span>
+              </input>
+            </label>
+            <label>
+              <input name='{{i}}' type='radio' value="{{opt2_list[i]}}">
+                <span class='btn'>Disagree</span>
+              </input>
+            </label>
+            <label>
+              <input name='{{i}}' type='radio' value="{{opt3_list[i]}}">
+                <span class='btn'>Maybe</span>
+              </input>
+            </label>
+            <label>
+              <input name='{{i}}' type='radio' value="{{opt4_list[i]}}">
+                <span class='btn'>Agree</span>
+              </input>
+            </label>
+            <label>
+              <input name='{{i}}' type='radio' value="{{opt5_list[i]}}">
+                <span class='btn last'>Strongly Agree</span>
+              </input>
+            </label>
+            <br/><br/>
+            
+    
+    {%endfor%}
+    <p><input type = "submit" value = "submit" /></p>
+    </form>
+    
+    </body>
+
+
+</html>

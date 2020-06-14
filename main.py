@@ -7,15 +7,16 @@ Created on Sat Jun 13 11:14:02 2020
 # importing necessary files
 import numpy as np
 import pandas as pd
-import csv	
+
 import matplotlib.pyplot as plt
 
-from flask import Flask, redirect, url_for, request ,render_template
+from flask import Flask, url_for, request ,render_template
 application = Flask(__name__) 
 
 # routing towards first link
 @application.route('/')
 def Starting():
+    
     return '''<a href = 'http://127.0.0.1:5000/display_qn' > Click on this link to open questions page</a>   '''
 
 
@@ -23,7 +24,7 @@ def Starting():
 # after clicking the link we are requesting to work the below function
 @application.route('/display_qn')
 def display_qn():
-    df =pd.read_csv('datasets/questions.csv')
+    df =pd.read_csv('static/questions.csv')
     
     # passing csv file to web page with column values
     return render_template('index.html', data_length = len(df['s.no']), ques_list = df['question'].to_dict(),\
@@ -74,8 +75,8 @@ def result():
       
 
       # saving graph in datasets folder
-      plt.savefig('datasets/result_plot.png')
-
+      plt.savefig('static/result_plot.png')
+      
       # calling the result webpage to show the graph
       return render_template("result.html",result = result)
 

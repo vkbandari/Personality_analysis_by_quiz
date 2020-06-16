@@ -10,14 +10,17 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
+
 from flask import Flask, url_for, request ,render_template
 application = Flask(__name__) 
+
 
 # routing towards first link
 @application.route('/')
 def Starting():
     
     return '''<a href = 'http://127.0.0.1:5000/display_qn' > Click on this link to open questions page</a>   '''
+
 
 
 
@@ -33,11 +36,36 @@ def display_qn():
                                    opt5_list = df['option_5'].to_dict())
     
 
+
 # creating a list of user values that we got from web page
 user_values = []
+
+
+# importing preprocessor to use label encoder to process on final label data
+from sklearn import preprocessing
+
+
+# getting object of label encoder
+encoder = preprocessing.LabelEncoder()
+
+
+# to split the data and to shape the data
+from sklearn.model_selection import train_test_split
+
+
+# to check out accuracy uncomment below line
+#from sklearn.metrics import accuracy_score
+
+
+# importing support vector machine algorithm
+from sklearn.svm import SVC
+
+
+
 @application.route('/result',methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
+      # getting the data from form
       result = request.form
       for i in result.values():
           user_values.append(float(i))
@@ -77,8 +105,79 @@ def result():
       # saving graph in datasets folder
       plt.savefig('static/result_plot.png')
       
+      # model deployment to predict the personality
+      
+      # reading the dataset which is in csv format
+      df = pd.read_csv('static/model_dataset.csv')
+      
+      # training the label data to encode
+      encoder.fit(df.Type)
+      
+      # conveting all label data in df[Type] to numeric
+      df['Type'] = encoder.transform(df['Type'])
+      
+      # taking the rest columns to x
+      x = df[df.columns[:-1]]
+      
+      # taking last column to y
+      y = df['Type'] 
+      
+
+
+      '''
+      # randomly splitting and arranging the data
+      x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+      
+      # initiated the svm model
+      model_1 = SVC()
+      
+      # training the model by passing input and output
+      model_1.fit(x_train,y_train)
+      
+      # predicting the output by passing only input data
+      y_pred_svm = model_1.predict(x_test)
+      
+      # checking accuracy by passing true output and predicted output      
+      print(accuracy_score(y_test, y_pred_svm)*100)
+      
+      #printing the value
+      for i,j in zip(y_test,y_pred_svm):
+          print('actual:\t%s\t\tpredicted:\t%s'%(i,j))
+      
+      '''
+
+
+      
+      # randomly splitting and arranging the data
+      x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.02, random_state=42)
+      
+      # initiated the svm model
+      model= SVC()
+      
+      # training the model by passing input and output
+      model.fit(x_train,y_train)
+      
+      # taking the labeles that encoder encoded
+      labels = encoder.classes_
+      
+      #print(labels)
+      
+      # here the actual prediction takes place by passing all percentages of the answers the user given
+      label_predicted_value = model.predict([sum_extr])
+      
+      # based on predicted number we are getting title of predicted
+      label_name = labels[label_predicted_value]
+
+
+      
+      # to get printed of predicted class and percentages uncomment the below two statements
+      #print(label_name[0])
+      #print(sum_extr)
+      
+
+      
       # calling the result webpage to show the graph
-      return render_template("result.html",result = result)
+      return render_template("result.html",label_name =label_name[0])
 
 
 
@@ -87,7 +186,6 @@ if __name__ == '__main__':
     application.run(debug=False)
     
     
-
 
 
 
